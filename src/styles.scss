@@ -1,0 +1,6 @@
+@import 'app/shared/styles/base';
+@import 'app/shared/styles/theme-material';
+@import 'ngx-toastr/toastr';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

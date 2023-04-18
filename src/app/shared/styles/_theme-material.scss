@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$noa-project-primary: mat.define-palette(mat.$teal-palette,);
+$noa-project-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+
+$noa-project-warn: mat.define-palette(mat.$red-palette);
+
+$noa-project-theme: mat.define-light-theme((
+  color: (
+    primary: $noa-project-primary,
+    accent: $noa-project-accent,
+    warn: $noa-project-warn,
+  )
+));
+
+@include mat.all-component-themes($noa-project-theme);
