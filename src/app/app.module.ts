@@ -11,27 +11,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 
-import { HomeComponent } from './pages/home/home.component';
-import { CabinetComponent } from './pages/cabinet/cabinet.component';
-import { ProductComponent } from './pages/product/product.component';
-import { PreOrderComponent } from './pages/pre-order/pre-order.component';
-import { DeliveryComponent } from './pages/delivery/delivery.component';
-import { FavoritesComponent } from './pages/favorites/favorites.component';
-import { ContactComponent } from './pages/contact/contact.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    CabinetComponent,
-    ProductComponent,
-    PreOrderComponent,
-    DeliveryComponent,
-    FavoritesComponent,
-    ContactComponent,
   ],
   imports: [
     BrowserModule,
