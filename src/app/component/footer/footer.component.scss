@@ -1,0 +1,88 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/media";
+@import "../../shared/styles/mixins";
+
+.footer {
+  width: 98%;
+  margin: 0 auto;
+  &__menu {
+    @include dispay(flex, space-around);
+    flex-wrap: wrap;
+
+    &__item {
+      width: 200px;
+      margin-bottom: 25px;
+      li a {
+        text-decoration: none;
+        color: $darkGrey;
+      }
+    }
+    &__info {
+      width: 260px;
+      @include dispay(flex, space-between);
+      flex-wrap: wrap;
+      @include respond(Small) {
+        width: 240px;
+      }
+      &__img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        background-color: $main;
+        background-image: url(../../../assets/1210526.svg);
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position: center;
+        position: relative;
+
+        @include respond(Small) {
+          width: 30px;
+          height: 30px;
+        }
+        mat-icon {
+          color: $white;
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          @include respond(Small) {
+           top: 8px;
+           left: 8px;
+           font-size: 15px;
+          }
+        }
+      }
+      &__facebook{
+        @extend .footer__menu__info__img;
+        background-color: $facebook ;
+        background-image: none;
+        font-size: 25px;
+        color: $white;
+        text-align: center;
+        line-height: 50px;
+        
+        @include respond(Small) {
+            font-size: 15px;
+            line-height: 28px;
+           }
+      }
+      &__inst{
+        @extend .footer__menu__info__facebook;
+        background: $instagram;
+       
+      }
+      
+      &__text {
+        width: 200px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  h3{
+    margin-top: 10px;
+  }
+  &__discribe{
+    @include dispay(flex, space-between);
+    padding: 15px;
+  }
+}

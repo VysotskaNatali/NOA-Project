@@ -1,1 +1,27 @@
-<p>cabinet works!</p>
+<div class="cabinet">
+    <div class="cabinet__side">
+      <div class="cabinet__side__big">
+        <ul>
+             <li [routerLink]="[ '/cabinet/user' ]"
+              routerLinkActive="route-active"> Особисті дані</li>
+    
+            <li [routerLink]="[ '/cabinet/history' ]"
+              routerLinkActive="route-active">Історія замовлень</li>
+             </ul>
+      </div>
+
+      <div class="cabinet__side__mobile">
+        <mat-form-field appearance="outline">
+            <mat-select value="user" >
+              <mat-option value="history" [routerLink]="[ '/cabinet/history' ]">Історія замовлень</mat-option>
+              <mat-option value="user" [routerLink]="[ '/cabinet/user' ]">Особисті дані</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary">Вихід</button>
+    </div>
+    <div class="cabinet__main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

@@ -14,6 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 const MATERIAL = [
   MatDialogModule,
@@ -26,7 +27,8 @@ const MATERIAL = [
   MatCheckboxModule,
   MatSelectModule,
   MatRadioModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSidenavModule
 ];
 
 

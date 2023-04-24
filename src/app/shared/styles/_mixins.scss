@@ -1,0 +1,4 @@
+@mixin dispay($d, $j-c) {
+  display: $d;
+  justify-content: $j-c;
+}

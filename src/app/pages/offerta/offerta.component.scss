@@ -1,0 +1,34 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/media';
+
+.offerta{
+     ul li{
+        display: inline-block;
+        margin: 10px;
+    }
+    li a{
+        text-decoration: none;
+    }
+    span{
+        color: $darkGrey;
+    }
+    i{
+        color: $main;
+        font-weight: bolder;
+    }
+    .header{
+        color: $darkTeal;
+        font-size: 38px;
+        font-family: 'Cera-Round-Pro-Bold';
+        @include respond(Medium) {
+         font-size: 32px;
+       }
+       @include respond(Small) {
+         font-size: 25px;
+       }
+    }
+    .hover:hover{
+        color: $main;
+        
+    }
+}

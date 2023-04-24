@@ -1,0 +1,42 @@
+@import "./shared/styles/media";
+@import "./shared/styles/variables";
+
+main {
+  width: 95%;
+  margin: 100px auto 50px;
+  @include respond(Medium) {
+    margin: 90px auto;
+  }
+  @include respond(Small) {
+    margin: 70px auto;
+  }
+}
+.sidenav {
+  padding: 30px;
+  width: 250px;
+}
+.mat-mdc-mini-fab {
+  position: fixed;
+  top: 16px;
+  right: 10px;
+  z-index: 100;
+}
+.close {
+  width: 35px;
+  height: 35px;
+  border: transparent;
+  outline: transparent;
+  background-color: transparent;
+  margin-left: 85%;
+  &:hover {
+    color: $main;
+  }
+}
+.mat-mdc-unelevated-button {
+  font-size: 27px;
+  margin: 15px 0;
+  &:hover {
+    background-color: $main !important;
+    color: $white;
+  }
+}

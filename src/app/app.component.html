@@ -1,5 +1,26 @@
-<app-header></app-header>
-<main>
-    <router-outlet></router-outlet>
-</main>
-<app-footer></app-footer>
+
+<mat-drawer-container>
+    <app-header></app-header>
+    <mat-drawer #drawer class="sidenav" mode="over" position="end">
+        <button class="close" (click)="drawer.toggle()"><mat-icon >close</mat-icon></button>
+        <ul>
+
+          <li> <button mat-flat-button [routerLink]="[ '/about' ]">Про нас</button></li>
+          <li> <button mat-flat-button [routerLink]="[ '/delivery' ]">Доставка</button></li>
+          <li> <button mat-flat-button [routerLink]="[ '/vacancies' ]">Вакансії</button></li>
+          <li> <button mat-flat-button [routerLink]="[ '/contact' ]">Контакти</button></li>
+          
+          </ul>
+    </mat-drawer>
+  
+    
+  <main>
+    <router-outlet>  <button mat-mini-fab color="primary"
+        (click)="drawer.toggle()">
+        <mat-icon> menu</mat-icon>
+    </button></router-outlet>
+
+ </main>
+ <app-footer></app-footer>
+
+</mat-drawer-container>

@@ -1,0 +1,67 @@
+@import "../../shared/styles/media";
+@import "../../shared/styles/variables";
+
+.cabinet {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__side {
+    width: 150px;
+    @include respond(Medium) {
+      width: 110px;
+    }
+    @include respond(Small) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__big{
+        display: block;
+        @include respond(Small) {
+           display: none;
+          }  
+    }
+    &__mobile{
+        width:calc(100% - 90px);
+        display: none;
+        @include respond(Small) {
+            display:flex;
+           }  
+    }
+  }
+  &__main {
+    width: calc(100% - 220px);
+    @include respond(Small) {
+      width: 100%;
+    }
+  }
+
+  li {
+    border: 3px solid $lighterGrey;
+    margin: 10px 0;
+    text-align: center;
+    color: $darkGrey;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 15px 0;
+
+    @include respond(Medium) {
+      font-size: 16px;
+    }
+  }
+  .route-active {
+    border: 3px solid $darkTeal;
+    color: $main;
+    font-weight: bolder;
+  }
+
+  .mat-mdc-raised-button {
+    margin-top: 15px;
+    @include respond(Small) {
+      width: 40px;
+      height: 35px;
+      margin-top: 0;
+    }
+  }
+}

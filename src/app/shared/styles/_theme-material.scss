@@ -1,18 +1,112 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 @include mat.core();
 
-$noa-project-primary: mat.define-palette(mat.$teal-palette,);
+$noa-project-primary: mat.define-palette(mat.$teal-palette);
 $noa-project-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
 
 $noa-project-warn: mat.define-palette(mat.$red-palette);
 
-$noa-project-theme: mat.define-light-theme((
-  color: (
-    primary: $noa-project-primary,
-    accent: $noa-project-accent,
-    warn: $noa-project-warn,
+$noa-project-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $noa-project-primary,
+      accent: $noa-project-accent,
+      warn: $noa-project-warn,
+    ),
   )
-));
+);
 
 @include mat.all-component-themes($noa-project-theme);
+
+@import "variables";
+@import "media";
+
+.mat-typography {
+  font-family: "Cera-Round-Pro", sans-serif;
+}
+
+// .mat-mdc-button-base{
+//   background-image: url(../../../assets/1210526.svg);
+//   background-repeat: no-repeat;
+//   background-size: 50px;
+//   background-position: center;
+// }
+.mat-mdc-raised-button {
+  width: 100%;
+}
+.mat-mdc-raised-button:hover {
+  color: $main !important;
+  background-color: $white !important;
+  border: 2px solid $main;
+}
+
+.mat-mdc-mini-fab {
+  background-image: url(../../../assets/1210526.svg);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  width: 20px;
+}
+.mdc-fab--mini {
+  @include respond(Medium) {
+    width: 35px !important;
+    height: 35px !important;
+    .mat-icon {
+      font-size: 21px;
+      font-weight: lighter !important;
+    }
+  }
+  @include respond(Small) {
+    width: 30px !important;
+    height: 30px !important;
+    .mat-icon {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.mat-mdc-button {
+  margin-top: 10px;
+  color: white !important;
+  &:hover {
+    color: teal !important;
+  }
+  mat-icon {
+    color: teal !important;
+    font-size: 22px !important;
+    margin-top: -10px;
+    font-weight: 100 !important;
+  }
+  @include respond(Medium) {
+    font-size: 12px !important;
+    margin-top: 0px;
+  }
+  @include respond(Small) {
+    font-size: 10px !important;
+  }
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+  @include respond(Small) {
+    height: 35px !important;
+  }
+}
+.mat-mdc-text-field-wrapper {
+  @include respond(Small) {
+    height: 35px !important;
+  }
+}
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  @include respond(Small) {
+    padding: 5px 0;
+  }
+}
+.mat-mdc-option {
+  @include respond(Small) {
+    font-size: 12px !important;
+    min-height: 20px !important;
+  }
+}

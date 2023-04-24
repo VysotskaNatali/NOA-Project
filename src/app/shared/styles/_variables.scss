@@ -1,0 +1,87 @@
+@import "media";
+@import "font";
+
+$white: #ffffff;
+$black: #000000;
+$darkGrey: #3b3a3a;
+$lightGrey: #6e6c6c;
+$lighterGrey: #dfdbdb;
+
+$main: #009688;
+$darkTeal: #077a6f;
+$scroollBg: #d0f5f1;
+$facebook: #1f1675;
+$instagram: linear-gradient(
+  180deg,
+  rgba(131, 58, 180, 1) 0%,
+  rgba(253, 29, 29, 1) 50%,
+  rgba(252, 176, 69, 1) 100%
+);
+
+h1 {
+  color: $black;
+  text-align: center;
+  font-size: 38px;
+  font-family: "Cera-Round-Pro-Bold";
+  @include respond(Medium) {
+    font-size: 32px;
+  }
+  @include respond(Small) {
+    font-size: 25px;
+  }
+}
+h2 {
+  color: $black;
+  font-family: "Cera-Round-Pro-Bold";
+  font-size: 22px;
+  @include respond(Medium) {
+    font-size: 18px;
+  }
+  @include respond(Small) {
+    font-size: 16px;
+  }
+}
+h3 {
+  font-size: 16px;
+  color: $darkGrey;
+  font-family: "Cera-Round-Pro-Bold";
+  @include respond(Medium) {
+    font-size: 14px;
+  }
+  @include respond(Small) {
+    font-size: 12px;
+  }
+}
+p {
+  font-size: 16px;
+  color: $lightGrey;
+  @include respond(Medium) {
+    font-size: 14px;
+  }
+  @include respond(Small) {
+    font-size: 12px;
+  }
+}
+small {
+  font-size: 16px;
+  color: $lightGrey;
+  @include respond(Medium) {
+    font-size: 14px;
+  }
+  @include respond(Small) {
+    font-size: 12px;
+  }
+}
+span {
+  font-size: 16px;
+  @include respond(Medium) {
+    font-size: 14px;
+  }
+  @include respond(Small) {
+    font-size: 12px;
+  }
+}
+a,
+button {
+  cursor: pointer;
+}

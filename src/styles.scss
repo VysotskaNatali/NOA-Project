@@ -1,6 +1,26 @@
-@import 'app/shared/styles/base';
-@import 'app/shared/styles/theme-material';
-@import 'ngx-toastr/toastr';
+@import "app/shared/styles/base";
+@import "app/shared/styles/variables";
+@import "app/shared/styles/theme-material";
+@import "ngx-toastr/toastr";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(240, 241, 241);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: $scroollBg;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: $main;
+}
+body::-webkit-scrollbar-button {
+  background-color: $main;
+}

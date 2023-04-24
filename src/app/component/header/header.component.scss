@@ -1,0 +1,76 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/media";
+@import "../../shared/styles/mixins";
+
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 15px 10px 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  @include dispay(flex, space-between);
+  background-image: url(../../../assets/bg-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include respond(Medium) {
+    height: 70px;
+  }
+  @include respond(Small) {
+    height: 60px;
+  }
+
+  &__logo {
+    width: 100px;
+    background-image: url(../../../assets/logo_one-1.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @include respond(Medium) {
+      width: 90px;
+    }
+    @include respond(Small) {
+      width: 70px;
+    }
+  }
+  &__menu {
+    width: 350px;
+    @include dispay(flex, space-around);
+    @include respond(Large) {
+      width: 65px;
+    }
+  }
+
+  &__review {
+    width: 200px;
+    height: 50px;
+    background-color: $darkGrey;
+    border: 3px solid $darkGrey;
+    border-radius: 8px;
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    &:hover {
+      background-color: $main;
+      border: 3px solid $main;
+    }
+  }
+  
+  &__menu-1 {
+    width: 250px;
+    @include dispay(flex, space-between);
+    @include respond(Medium) {
+      width: 200px;
+    }
+  }
+  .hide {
+    @include respond(Large) {
+      display: none;
+    }
+  }
+  span{
+    color: $white;
+  }
+}
+

@@ -38,6 +38,11 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'offerta',
+    loadChildren: () =>
+      import('./pages/offerta/offerta.module').then((m) => m.OffertaModule),
+  },
+  {
     path: 'preOrder',
     loadChildren: () =>
       import('./pages/pre-order/pre-order.module').then((m) => m.PreOrderModule),
@@ -46,6 +51,11 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () =>
       import('./pages/product/product.module').then((m) => m.ProductModule),
+  },
+  {
+    path: 'vacancies',
+    loadChildren: () =>
+      import('./pages/vacancies/vacancies.module').then((m) => m.VacanciesModule),
   },
 ];
 
