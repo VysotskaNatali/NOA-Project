@@ -6,6 +6,8 @@ $black: #000000;
 $darkGrey: #3b3a3a;
 $lightGrey: #6e6c6c;
 $lighterGrey: #dfdbdb;
+$greyBg:#f5f4f4;
+$red:#f81111;
 
 $main: #009688;
 $darkTeal: #077a6f;
@@ -34,6 +36,7 @@ h2 {
   color: $black;
   font-family: "Cera-Round-Pro-Bold";
   font-size: 22px;
+  font-weight: bold;
   @include respond(Medium) {
     font-size: 18px;
   }
@@ -42,11 +45,12 @@ h2 {
   }
 }
 h3 {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
   color: $darkGrey;
   font-family: "Cera-Round-Pro-Bold";
   @include respond(Medium) {
-    font-size: 14px;
+    font-size: 16px;
   }
   @include respond(Small) {
     font-size: 12px;
@@ -84,4 +88,26 @@ span {
 a,
 button {
   cursor: pointer;
+}
+%header{
+  color: $darkTeal;
+  font-size: 38px;
+  font-family: 'Cera-Round-Pro-Bold';
+  @include respond(Medium) {
+   font-size: 32px;
+ }
+ @include respond(Small) {
+   font-size: 25px;
+ }
+}
+%container{
+  width: 75%;
+  margin: 40px auto;
+  @include respond(Medium) {
+    width: 85%;
+  }
+  @include respond(Small) {
+    width: 95%;
+  }
+
 }

@@ -110,3 +110,6 @@ $noa-project-theme: mat.define-light-theme(
     min-height: 20px !important;
   }
 }
+.mat-drawer-inner-container {
+overflow: hidden!important;
+}

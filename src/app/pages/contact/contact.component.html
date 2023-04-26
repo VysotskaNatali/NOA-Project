@@ -1,1 +1,168 @@
-<p>contact works!</p>
+<h1>Наші <span class="header">контакти</span></h1>
+<section class="contact">
+
+    <div class="contact__address">
+        <h3>ТРЦ Victoria Gardens</h3>
+        <div class="contact__address__box">
+            <div class="contact__address__box__text">
+                <i class="uil uil-map-marker"></i>
+                <p>м. Львів</p>
+            </div>
+            <p class="contact__address__box__p">Кульпарківська 226 А</p>
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p>victoriagardens@noa.lviv.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p>098 732 08 41</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Нд з 10:00 до 22:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__address">
+        <h3>NOA Староєврейська</h3>
+        <div class="contact__address__box">
+            <div class="contact__address__box__text">
+                <i class="uil uil-map-marker"></i>
+                <p>м. Львів</p>
+            </div>
+            <p class="contact__address__box__p">Староєврейська 4</p>
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p> staroevreyska@noa.lviv.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p> 067 884 46 17</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Нд з 10:00 до 23:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__address">
+        <h3>NOA Крива Липа</h3>
+        <div class="contact__address__box">
+            <div class="contact__address__box__text">
+                <i class="uil uil-map-marker"></i>
+                <p>м. Львів</p>
+            </div>
+            <p class="contact__address__box__p">Крива Липа 8</p>
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p>kl@noa.lviv.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p>067 884 46 96</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Нд з 10:00 до 22:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__address">
+        <h3>СТРЦ Spartak</h3>
+        <div class="contact__address__box">
+            <div class="contact__address__box__text">
+                <i class="uil uil-map-marker"></i>
+                <p>м. Львів</p>
+            </div>
+            <p class="contact__address__box__p">Мазепи 1Б</p>
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p>spartak@noa.lviv.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p>067 884 46 31</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Нд з 10:00 до 22:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__address">
+        <h3>ТРЦ King Cross Leopolis</h3>
+        <div class="contact__address__box">
+            <div class="contact__address__box__text">
+                <i class="uil uil-map-marker"></i>
+                <p>м. Львів</p>
+            </div>
+            <p class="contact__address__box__p">Стрийська 30</p>
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p>kingcross@noa.lviv.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p>067 884 45 90</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Нд з 10:00 до 21:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact__address">
+        <h3>NOA Комерційний відділ</h3>
+        <div class="contact__address__box">
+            
+            <div class="contact__address__box__text">
+                <i class="uil uil-envelope"></i>
+                <p>commerce@tomatina.ua</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-mobile-android-alt"></i>
+                <p>096 469 90 83</p>
+            </div>
+            <div class="contact__address__box__text">
+                <i class="uil uil-clock"></i>
+                <p> Пн - Пт з 09:00 до 18:00</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact">
+    <div class="contact__form"></div>
+    <div class="contact__map">
+        <google-map
+        [options]="mapOptions"
+        width="100%"
+        (mapClick)="moveMap($event)">
+
+        <map-marker
+            *ngFor="let spot of spots"
+            [position]="{ lat: spot.lat, lng: spot.lng }"
+            [options]="markerOptions"
+            [clickable]="true"
+            (mapClick)="selectMarker(spot)"></map-marker>
+
+        <map-polygon [paths]="greenZone"
+            [options]="poligonGreen"></map-polygon>
+
+        <map-polygon [paths]="yellowZone"
+            [options]="poligonYellow"></map-polygon>
+        <map-polygon [paths]="redZone"
+            [options]="poligonRed"></map-polygon>
+            <map-polygon [paths]="redZone1"
+            [options]="poligonRed"></map-polygon>
+            <map-polygon [paths]="redZone2"
+            [options]="poligonRed"></map-polygon>
+            <map-polygon [paths]="redZone3"
+            [options]="poligonRed"></map-polygon>
+    </google-map>
+    </div>
+</section>

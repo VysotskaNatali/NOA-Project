@@ -2,19 +2,19 @@
 @import "./shared/styles/variables";
 
 main {
-  width: 95%;
   margin: 100px auto 50px;
   @include respond(Medium) {
     margin: 90px auto;
   }
   @include respond(Small) {
-    margin: 70px auto;
+    margin: 70px auto 20px;
   }
 }
 .sidenav {
-  padding: 30px;
-  width: 250px;
+  padding: 20px;
+  width: 300px;
 }
+
 .mat-mdc-mini-fab {
   position: fixed;
   top: 16px;
@@ -39,4 +39,9 @@ main {
     background-color: $main !important;
     color: $white;
   }
+}
+
+.mat-mdc-unelevated-button:focus {
+  background-color: $main !important;
+  color: $white;
 }
