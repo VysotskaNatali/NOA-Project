@@ -57,6 +57,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/vacancies/vacancies.module').then((m) => m.VacanciesModule),
   },
+  
+
 ];
 
 @NgModule({

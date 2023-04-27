@@ -13,7 +13,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -13,7 +13,7 @@
   &__address {
     width: 300px;
     height: 400px;
-    margin: 10px;
+    margin-top: 10px;
 
     &__box {
       width: 100%;
@@ -25,7 +25,7 @@
       &__text {
         display: flex;
         width: 100%;
-        margin-top: 20px ;
+        margin-top: 20px;
         font-weight: bold;
         i {
           font-size: 20px;
@@ -33,13 +33,13 @@
           margin-right: 25px;
         }
       }
-      &__p{
+      &__p {
         color: $lightGrey;
         margin-left: 35px;
       }
     }
   }
-  &__form{
+  &__form {
     width: 50%;
   }
   &__map {
