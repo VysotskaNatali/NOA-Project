@@ -10,10 +10,11 @@
   top: 0;
   left: 0;
   z-index: 2;
-  @include dispay(flex, space-between);
+  @include dispay(flex, space-between, nowrap);
   background-image: url(../../../assets/bg-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
   @include respond(Medium) {
     height: 70px;
   }
@@ -26,6 +27,7 @@
     background-image: url(../../../assets/logo_one-1.svg);
     background-repeat: no-repeat;
     background-size: 100%;
+
     @include respond(Medium) {
       width: 90px;
     }
@@ -33,9 +35,11 @@
       width: 70px;
     }
   }
+
   &__menu {
     width: 350px;
-    @include dispay(flex, space-around);
+    @include dispay(flex, space-around, nowrap);
+
     @include respond(Large) {
       width: 65px;
     }
@@ -47,30 +51,34 @@
     background-color: $darkGrey;
     border: 3px solid $darkGrey;
     border-radius: 8px;
+
     a {
       text-decoration: none;
       color: $white;
     }
+
     &:hover {
       background-color: $main;
       border: 3px solid $main;
     }
   }
-  
+
   &__menu-1 {
     width: 250px;
-    @include dispay(flex, space-between);
+    @include dispay(flex, space-between, nowrap);
+
     @include respond(Medium) {
       width: 200px;
     }
   }
+
   .hide {
     @include respond(Large) {
       display: none;
     }
   }
-  span{
+
+  span {
     color: $white;
   }
 }
-

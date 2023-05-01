@@ -119,7 +119,7 @@
     <div class="contact__address">
         <h3>NOA Комерційний відділ</h3>
         <div class="contact__address__box">
-            
+
             <div class="contact__address__box__text">
                 <i class="uil uil-envelope"></i>
                 <p>commerce@tomatina.ua</p>
@@ -135,34 +135,86 @@
         </div>
     </div>
 </section>
-<section class="contact">
-    <div class="contact__form"></div>
-    <div class="contact__map">
+
+<section class="revers">
+    <div class="revers__container">
         <google-map
-        [options]="mapOptions"
-        width="100%"
-        (mapClick)="moveMap($event)">
+            [options]="mapOptions"
+            width="100%"
+            (mapClick)="moveMap($event)">
 
-        <map-marker
-            *ngFor="let spot of spots"
-            [position]="{ lat: spot.lat, lng: spot.lng }"
-            [options]="markerOptions"
-            [clickable]="true"
-            (mapClick)="selectMarker(spot)"></map-marker>
+            <map-marker
+                *ngFor="let spot of spots"
+                [position]="{ lat: spot.lat, lng: spot.lng }"
+                [options]="markerOptions"
+                [clickable]="true"
+                (mapClick)="selectMarker(spot)"></map-marker>
 
-        <map-polygon [paths]="greenZone"
-            [options]="poligonGreen"></map-polygon>
+            <map-polygon [paths]="greenZone"
+                [options]="poligonGreen"></map-polygon>
 
-        <map-polygon [paths]="yellowZone"
-            [options]="poligonYellow"></map-polygon>
-        <map-polygon [paths]="redZone"
-            [options]="poligonRed"></map-polygon>
+            <map-polygon [paths]="yellowZone"
+                [options]="poligonYellow"></map-polygon>
+            <map-polygon [paths]="redZone"
+                [options]="poligonRed"></map-polygon>
             <map-polygon [paths]="redZone1"
-            [options]="poligonRed"></map-polygon>
+                [options]="poligonRed"></map-polygon>
             <map-polygon [paths]="redZone2"
-            [options]="poligonRed"></map-polygon>
+                [options]="poligonRed"></map-polygon>
             <map-polygon [paths]="redZone3"
-            [options]="poligonRed"></map-polygon>
-    </google-map>
+                [options]="poligonRed"></map-polygon>
+        </google-map>
     </div>
+    <div class="revers__container ">
+        <h3>У тебе виникли запитання? Напиши нам!</h3>
+        <form class="revers__form"
+            [formGroup]="contactForm">
+            
+            <div class="revers__form__group">
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label><span>*Ім'я</span></mat-label>
+                    <input formControlName="firstName"
+                        matInput type="text">
+                </mat-form-field>
+            </div>
+            <div class="revers__form__group">
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label><span>*Прізвище</span></mat-label>
+                    <input formControlName="lastName"
+                        matInput type="text">
+                </mat-form-field>
+            </div>
+            <div class="revers__form__group">
+                <mat-form-field appearance="outline" color="primary"
+                    class="example-full-width">
+                    <mat-label><span>*Ваш телефон</span></mat-label>
+                    <span matPrefix>+38 &nbsp;</span>
+                    <input type="tel" matInput formControlName="phone"
+                        placeholder="(ххх)ххх хх хх">
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="revers__form__group">
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label><span>*E-mail</span></mat-label>
+                    <input formControlName="email"
+                        matInput type="email">
+                </mat-form-field>
+            </div>
+
+            <div class="revers__form__groupText">
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label><span>Повідомлення</span></mat-label>
+                    <textarea matInput formControlName="comment"></textarea>
+                  </mat-form-field>
+            </div>
+
+            <div class="revers__form__group">
+                <button mat-raised-button    [disabled]="contactForm.invalid"
+                type="submit" color="primary">НАДІСЛАТИ</button>
+            </div>
+
+        </form>
+    </div>
+   
 </section>

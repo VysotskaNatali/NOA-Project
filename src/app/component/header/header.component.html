@@ -4,7 +4,7 @@
     <div class="header__menu">
         <button mat-button>Меню</button>
         <button class="hide" mat-button>Thai market</button>
-        <button class="hide" mat-button>Доставка</button>
+        <button  [routerLink]="[ '/delivery' ]" class="hide" mat-button >Доставка</button>
     </div>
      <div>
         <button class="header__review hide">
@@ -17,9 +17,8 @@
           <button mat-mini-fab color="primary" title="+38 (067) 792 90 90 Працюємо Пн - Нд з 10:00 до 22:50">
             <mat-icon>ad_units</mat-icon>
           </button>
-          <button mat-button [routerLink]="[ '/admin' ]"><mat-icon >person_outline</mat-icon>Basic</button>
+          <button mat-button (click)="openLoginDialog()"><mat-icon >person_outline</mat-icon>Basic</button>
            <button mat-mini-fab color="primary"></button>
-         
         </div>
     
 </section>

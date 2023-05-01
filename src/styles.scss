@@ -1,6 +1,7 @@
 @import "app/shared/styles/base";
 @import "app/shared/styles/variables";
 @import "app/shared/styles/theme-material";
+@import "app/shared/styles/media";
 @import "ngx-toastr/toastr";
 
 html,
@@ -12,7 +13,10 @@ body {
   background-color: rgb(240, 241, 241);
 }
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
+  @include respond(Small) {
+    width: 2px;
+  }
 }
 body::-webkit-scrollbar-track {
   background-color: $scroollBg;

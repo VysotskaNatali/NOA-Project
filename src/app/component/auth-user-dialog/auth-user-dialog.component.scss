@@ -1,0 +1,40 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/media";
+@import "../../shared/styles/mixins";
+
+h2{
+    width: 90%;
+}
+.form {
+    @include dispay(flex, space-between, wrap);
+}
+.form-group {
+  width: 100%;
+  display: flex;
+}
+.form-group-half {
+  width: 49%;
+}
+.mat-error {
+  text-align: center;
+}
+.closeForm {
+  margin-top: -10px;
+  margin-right: -12px;
+  
+}
+mat-checkbox {
+  margin: 15px 0;
+}
+mat-checkbox a {
+  text-decoration: none;
+  
+  font-weight: 400;
+  &:hover {
+    color: $main;
+  }
+}
+span{
+    color: $darkGrey;
+    padding: 0 10px;
+}

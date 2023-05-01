@@ -57,7 +57,21 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/vacancies/vacancies.module').then((m) => m.VacanciesModule),
   },
-  
+  {
+    path: 'authUser',
+    loadChildren: () =>
+      import('./component/auth-user-dialog/auth-user-dialog.module').then((m) => m.AuthUserDialogModule),
+  },
+  {
+    path: 'authAdmin',
+    loadChildren: () =>
+      import('./component/auth-admin-dialog/auth-admin-dialog.module').then((m) => m.AuthAdminDialogModule),
+  },
+  {
+    path: 'basket',
+    loadChildren: () =>
+      import('./component/basket-dialog/basket-dialog.module').then((m) => m.BasketDialogModule),
+  },
 
 ];
 

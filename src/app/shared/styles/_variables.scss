@@ -1,17 +1,22 @@
 @import "media";
 @import "font";
+@import "typography";
+
 
 $white: #ffffff;
-$black: #000000;
+$black: #2D2C2C;
 $darkGrey: #3b3a3a;
-$lightGrey: #6e6c6c;
+$lightGrey: #6d6d6d;
 $lighterGrey: #dfdbdb;
-$greyBg:#f5f4f4;
-$red:#f81111;
+
+$red:#EF2F3D;
+$green: #599921;
+$yellow:#ffcc00;
 
 $main: #009688;
 $darkTeal: #077a6f;
 $scroollBg: #d0f5f1;
+$greyBg:#f5f4f4;
 $facebook: #1f1675;
 $instagram: linear-gradient(
   180deg,
@@ -20,75 +25,6 @@ $instagram: linear-gradient(
   rgba(252, 176, 69, 1) 100%
 );
 
-h1 {
-  color: $black;
-  text-align: center;
-  font-size: 38px;
-  font-family: "Cera-Round-Pro-Bold";
-  @include respond(Medium) {
-    font-size: 32px;
-  }
-  @include respond(Small) {
-    font-size: 25px;
-  }
-}
-h2 {
-  color: $black;
-  font-family: "Cera-Round-Pro-Bold";
-  font-size: 22px;
-  font-weight: bold;
-  @include respond(Medium) {
-    font-size: 18px;
-  }
-  @include respond(Small) {
-    font-size: 16px;
-  }
-}
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: $darkGrey;
-  font-family: "Cera-Round-Pro-Bold";
-  @include respond(Medium) {
-    font-size: 16px;
-  }
-  @include respond(Small) {
-    font-size: 12px;
-  }
-}
-p {
-  font-size: 16px;
-  color: $lightGrey;
-  @include respond(Medium) {
-    font-size: 14px;
-  }
-  @include respond(Small) {
-    font-size: 12px;
-  }
-}
-small {
-  font-size: 16px;
-  color: $lightGrey;
-  @include respond(Medium) {
-    font-size: 14px;
-  }
-  @include respond(Small) {
-    font-size: 12px;
-  }
-}
-span {
-  font-size: 16px;
-  @include respond(Medium) {
-    font-size: 14px;
-  }
-  @include respond(Small) {
-    font-size: 12px;
-  }
-}
-a,
-button {
-  cursor: pointer;
-}
 %header{
   color: $darkTeal;
   font-size: 38px;
@@ -101,13 +37,15 @@ button {
  }
 }
 %container{
-  width: 75%;
+  width: 90%;
   margin: 40px auto;
   @include respond(Medium) {
-    width: 85%;
+    width: 95%;
+    margin: 30px auto;
   }
   @include respond(Small) {
-    width: 95%;
+    width: 97%;
+    margin: 20px auto;
   }
 
 }

@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 
+//--Angular material theme--
 @include mat.core();
 
 $noa-project-primary: mat.define-palette(mat.$teal-palette);
@@ -26,12 +27,7 @@ $noa-project-theme: mat.define-light-theme(
   font-family: "Cera-Round-Pro", sans-serif;
 }
 
-// .mat-mdc-button-base{
-//   background-image: url(../../../assets/1210526.svg);
-//   background-repeat: no-repeat;
-//   background-size: 50px;
-//   background-position: center;
-// }
+//-- Button style --
 .mat-mdc-raised-button {
   width: 100%;
 }
@@ -66,7 +62,6 @@ $noa-project-theme: mat.define-light-theme(
     }
   }
 }
-
 .mat-mdc-button {
   margin-top: 10px;
   color: white !important;
@@ -88,28 +83,45 @@ $noa-project-theme: mat.define-light-theme(
   }
 }
 
+//-- Form input select style--
 .mat-mdc-form-field {
   width: 100%;
-  @include respond(Small) {
-    height: 35px !important;
-  }
 }
-.mat-mdc-text-field-wrapper {
-  @include respond(Small) {
-    height: 35px !important;
-  }
-}
-.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  @include respond(Small) {
-    padding: 5px 0;
-  }
-}
+
 .mat-mdc-option {
   @include respond(Small) {
     font-size: 12px !important;
     min-height: 20px !important;
   }
 }
+
+//--SideNav style--
 .mat-drawer-inner-container {
 overflow: hidden!important;
+}
+
+//--Google Maps style--
+.map-container{
+  height: 500px!important;
+  @include respond(Large) {
+    height: 400px!important;
+  }
+  @include respond(Small) {
+    height: 300px!important;
+  }
+}
+
+//--Angular material dialog style--
+.dialog-back, .warning-back, .call-back {
+  background-color: rgba(0, 0, 0, 0.705);
+  
+}
+.auth-dialog{
+  width: 500px;
+  min-height: 400px;
+}
+
+.mdc-dialog__surface {
+padding: 6px 25px;
+overflow: hidden;
 }

@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { WarningDialogComponent } from './warning-dialog/warning-dialog.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, WarningDialogComponent],
   imports: [CommonModule, SharedModule, HomeRoutingModule],
 })
 export class HomeModule {}

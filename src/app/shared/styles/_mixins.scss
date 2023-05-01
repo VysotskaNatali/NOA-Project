@@ -1,4 +1,5 @@
-@mixin dispay($d, $j-c) {
+@mixin dispay($d, $j-c, $w) {
   display: $d;
   justify-content: $j-c;
+  flex-wrap: $w;
 }

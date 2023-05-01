@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,8 +10,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
- 
-  public myLatLng = { lat: 49.8632811, lng: 24.0167166 }; // Map Options
+
+ //--Google Maps--
+ public myLatLng = { lat: 49.8632811, lng: 24.0167166 }; // Map Options
   public mapOptions: google.maps.MapOptions = {
     center: this.myLatLng,
     zoom: 10,
@@ -92,21 +94,66 @@ export class ContactComponent implements OnInit {
   public spots: { id: number; lat: number; lng: number }[] = [
     { id: 1, lat: 49.8074658, lng: 23.9761689 },
     { id: 2, lat: 49.840284, lng: 24.0285459},
-    { id: 3, lat: 49.8407802, lng: 24.0231406},
+    { id: 3, lat: 49.8405528, lng: 24.023328},
     { id: 4, lat: 49.8703795, lng: 24.020361,},
-    { id: 5, lat:49.7733048,lng: 24.0081397},
+    { id: 5, lat: 49.7738939,lng: 24.0071498},
   
   ];
 
+  //--Form--
+  public contactForm!: FormGroup;
   
-  constructor(public google: GoogleMapsModule,private toastr: ToastrService) {}
+  constructor(
+    public google: GoogleMapsModule,
+    private toastr: ToastrService,
+    public fb: FormBuilder,
+    ) {}
 
   ngOnInit(): void {
+    this.initContactForm();
     
   }
+  initContactForm():void{
+this.contactForm = this.fb.group({
+  firstName: [null, [Validators.required, Validators.minLength(2)]],
+  lastName: [null, [Validators.required, Validators.minLength(2)]],
+  phone: [null,
+    [
+      Validators.required,
+      Validators.pattern(
+        /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/
+      ),
+    ],
+  ],
+  email: [
+    null,
+    [
+      Validators.required,
+      Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i),
+    ],
+  ],
+  comment: [null],
+})
+  }
+
 
   selectMarker(spot: { id: number; lat: number; lng: number }) {
-
+    if (spot.id == 1) {
+      this.toastr.success('м. Львів Кульпарківська 226 А')
+    }
+    if (spot.id == 2) {
+      this.toastr.success('м. Львів Староєврейська 4')
+    }
+    if (spot.id == 3) {
+      this.toastr.success('м. Львів Крива Липа 8')
+    }
+    if (spot.id == 4) {
+      this.toastr.success('м. Львів Мазепи 1Б')
+    }
+    if (spot.id == 5) {
+      this.toastr.success('м. Львів Стрийська 30')
+    }
+    
  
    
   }

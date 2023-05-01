@@ -1,0 +1,106 @@
+@import "media";
+@import "font";
+
+$black: #2D2C2C;
+$darkGrey: #3b3a3a;
+$lightGrey: #6d6d6d;
+h1 {
+    color: $black;
+    text-align: center;
+    font-size: 38px;
+    line-height: 2;
+    font-weight: bold;
+    font-family: "Cera-Round-Pro-Bold";
+    @include respond(Medium) {
+      font-size: 32px;
+    }
+    @include respond(Small) {
+      font-size: 25px;
+    }
+  }
+  h2 {
+    color: $black;
+    font-size: 38px;
+    line-height: 2;
+    font-weight: lighter;
+    font-family: "Cera-Round-Pro";
+    @include respond(Medium) {
+      font-size: 32px;
+    }
+    @include respond(Small) {
+      font-size: 25px;
+    }
+  }
+  h3 {
+    color: $black;
+    font-family: "Cera-Round-Pro-Bold";
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: bold;
+    @include respond(Medium) {
+      font-size: 18px;
+    }
+    @include respond(Small) {
+      font-size: 16px;
+    }
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: bold;
+    color: $darkGrey;
+    font-family: "Cera-Round-Pro-Bold";
+    @include respond(Medium) {
+      font-size: 14px;
+    }
+    @include respond(Small) {
+      font-size: 12px;
+    }
+  }
+  p, li{
+    font-size: 16px;
+    color: $lightGrey;
+    font-family: "Cera-Round-Pro";
+    line-height: 1.5;
+    @include respond(Medium) {
+      font-size: 14px;
+    }
+    @include respond(Small) {
+      font-size: 12px;
+    }
+  }
+  small {
+    font-size: 16px;
+    color: $lightGrey;
+    line-height: 1.5;
+    font-family: "Cera-Round-Pro";
+    @include respond(Medium) {
+      font-size: 14px;
+    }
+    @include respond(Small) {
+      font-size: 12px;
+    }
+  }
+  span {
+    font-size: 16px;
+    font-family: "Cera-Round-Pro";
+    line-height: 1.5;
+    @include respond(Medium) {
+      font-size: 14px;
+    }
+    @include respond(Small) {
+      font-size: 12px;
+    }
+  }
+  a {
+    font-family: "Cera-Round-Pro";
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+    color: $darkGrey;
+  }
+  button {
+    line-height: 1.5;
+    font-family: "Cera-Round-Pro";
+    cursor: pointer;
+  }

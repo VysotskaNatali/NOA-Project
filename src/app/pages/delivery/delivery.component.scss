@@ -1,0 +1,130 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/font";
+@import "../../shared/styles/media";
+@import "../../shared/styles/mixins";
+
+.header {
+  @extend %header;
+}
+.delivery {
+  @extend %container;
+  @include dispay(flex, space-between, wrap);
+
+  @include respond(Large) {
+    flex-direction: column-reverse;
+  }
+  &__info {
+    width: 48%;
+
+    @include respond(Large) {
+      width: 100%;
+    }
+
+    &__zone {
+      display: flex;
+      margin: 15px 0;
+
+      &__green {
+        width: 120px;
+        margin-right: 20px;
+        background-size: 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../../../assets/bike_green.svg);
+      }
+
+      &__yellow {
+        @extend .delivery__info__zone__green;
+        background-image: url(../../../assets/bike-yellow.svg);
+      }
+
+      &__red {
+        @extend .delivery__info__zone__green;
+        background-image: url(../../../assets/bike_red.svg);
+      }
+
+      &__text-green {
+        h3 {
+          color: $green;
+        }
+        ul li::marker{
+          color: $green;
+        }
+      }
+      &__text-yellow {
+        h3 {
+          color: $yellow;
+        }
+        ul li::marker{
+          color: $yellow;
+        }
+      }
+      &__text-red {
+        h3 {
+          color: $red;
+        }
+        ul li::marker{
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__maps {
+    width: 48%;
+
+    @include respond(Large) {
+      width: 90%;
+      margin: 0 auto 50px;
+    }
+    @include respond(Small) {
+      width: 95%;
+      margin: 0 auto 10px;
+    }
+  }
+
+  &__about{
+    width: 80%;
+    margin: 0px auto;
+
+    @include respond(Large) {
+        width: 90%;
+      }
+      @include respond(Small) {
+        width: 95%;
+      }
+      ul li::marker{
+        color:$green;
+      }
+  }
+
+  &__cash{
+    width: 100%;
+    @include dispay(flex, space-around, wrap);
+    &__block{
+        display: flex;
+        width: 350px;
+        margin: 15px;
+        &__img{
+            width: 73px;
+            padding: 25px 0;
+            margin-right: 20px;
+            @include respond(Medium) {
+              padding: 15px 0;
+            }
+            @include respond(Small) {
+              padding: 5px 0;
+            }
+        }
+    }
+  }
+}
+
+
+  ul{
+    list-style-type: circle;
+   
+  }
+
+  
+  
