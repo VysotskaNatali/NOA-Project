@@ -2,28 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { Subscription } from 'rxjs';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 
 @Component({
   selector: 'app-auth-user-dialog',
   templateUrl: './auth-user-dialog.component.html',
-  styleUrls: ['./auth-user-dialog.component.scss']
+  styleUrls: ['./auth-user-dialog.component.scss'],
 })
 export class AuthUserDialogComponent implements OnInit {
   public authForm!: FormGroup;
   public registForm!: FormGroup;
-  public loginSubcription!: Subscription;
+
   public isLogin = true;
   public hide = true;
   public checkError = false;
 
   constructor(
     public fb: FormBuilder,
-    // public accountService: AccountService,
-    // private router: Router,
-    // private auth: Auth,
-    // private afs: Firestore,
-     private toastr: ToastrService,
+    public accountService: AccountService,
+    private toastr: ToastrService,
     private dialogRef: MatDialogRef<AuthUserDialogComponent>
   ) {}
 
@@ -31,18 +28,10 @@ export class AuthUserDialogComponent implements OnInit {
     this.initAuthForm();
     this.initRegistForm();
   }
-
+  
   initAuthForm(): void {
     this.authForm = this.fb.group({
-      email: [
-        null,
-        [
-          Validators.required,
-          Validators.pattern(
-            /^(?!.*admin)[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
-          ),
-        ],
-      ],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }
@@ -59,8 +48,8 @@ export class AuthUserDialogComponent implements OnInit {
         ],
         password: [null, [Validators.required, Validators.minLength(6)]],
         repassword: [null, [Validators.required, Validators.minLength(6)]],
-        firstN: [null, [Validators.required, Validators.minLength(2)]],
-        lastN: [null, [Validators.required, Validators.minLength(2)]],
+        firstName: [null, [Validators.required, Validators.minLength(2)]],
+        lastName: [null, [Validators.required, Validators.minLength(2)]],
         phone: [
           null,
           [
@@ -95,14 +84,29 @@ export class AuthUserDialogComponent implements OnInit {
   }
 
   loginUser(): void {
-    
+    const { email, password } = this.authForm.value;
+    this.accountService
+      .login(email, password)
+      .then(() => {
+        this.toastr.info('Вітаємо вас в кабінеті !');
+        this.accountService.isUserLogin$.next(true);
+      })
+      .catch((e) => {
+        this.toastr.error('Помилка вводу', e);
+      });
+     
   }
-
 
   registerUser(): void {
-  
-
+    const { email, password ,firstName ,lastName,phone} = this.registForm.value;
+    this.accountService.register(email, password,firstName,lastName,phone)
+    .then(() => {
+      this.toastr.info('Вітаємо ви зареестровані !');
+      this.isLogin = !this.isLogin;
+      this.registForm.reset();
+    })
+    .catch((e) => {
+      this.toastr.error('Помилка вводу даних', e);
+    });
   }
-
- 
 }

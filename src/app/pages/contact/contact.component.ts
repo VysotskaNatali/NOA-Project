@@ -136,6 +136,11 @@ this.contactForm = this.fb.group({
 })
   }
 
+  sendMessage():void{
+    this.toastr.info('Ваше повіломлення відправлено');
+    this.contactForm.reset();
+  }
+
 
   selectMarker(spot: { id: number; lat: number; lng: number }) {
     if (spot.id == 1) {

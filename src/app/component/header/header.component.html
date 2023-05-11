@@ -17,7 +17,10 @@
           <button mat-mini-fab color="primary" title="+38 (067) 792 90 90 Працюємо Пн - Нд з 10:00 до 22:50">
             <mat-icon>ad_units</mat-icon>
           </button>
-          <button mat-button (click)="openLoginDialog()"><mat-icon >person_outline</mat-icon>Basic</button>
+          <button mat-button (click)="openLoginDialog()" *ngIf="isLogin">
+            <mat-icon >person_outline</mat-icon>Вхід</button>
+          <button mat-button [routerLink]="[ '/'+loginUrl ]" *ngIf="!isLogin">
+            <mat-icon >person_outline</mat-icon>{{user}}</button>
            <button mat-mini-fab color="primary"></button>
         </div>
     

@@ -49,7 +49,7 @@ h1 {
     line-height: 1.8;
     font-weight: bold;
     color: $darkGrey;
-    font-family: "Cera-Round-Pro-Bold";
+    font-family: "Cera-Round-Pro-Bold",serif;
     @include respond(Medium) {
       font-size: 14px;
     }
@@ -60,7 +60,7 @@ h1 {
   p, li{
     font-size: 16px;
     color: $lightGrey;
-    font-family: "Cera-Round-Pro";
+    font-family: "Cera-Round-Pro",serif;
     line-height: 1.5;
     @include respond(Medium) {
       font-size: 14px;
@@ -73,7 +73,7 @@ h1 {
     font-size: 16px;
     color: $lightGrey;
     line-height: 1.5;
-    font-family: "Cera-Round-Pro";
+    font-family: "Cera-Round-Pro",serif;
     @include respond(Medium) {
       font-size: 14px;
     }
@@ -83,7 +83,7 @@ h1 {
   }
   span {
     font-size: 16px;
-    font-family: "Cera-Round-Pro";
+    font-family: "Cera-Round-Pro",serif;
     line-height: 1.5;
     @include respond(Medium) {
       font-size: 14px;
@@ -93,7 +93,7 @@ h1 {
     }
   }
   a {
-    font-family: "Cera-Round-Pro";
+    font-family: "Cera-Round-Pro",serif;
     line-height: 1.5;
     text-decoration: none;
     cursor: pointer;
@@ -101,6 +101,6 @@ h1 {
   }
   button {
     line-height: 1.5;
-    font-family: "Cera-Round-Pro";
+    font-family: "Cera-Round-Pro",serif;
     cursor: pointer;
   }

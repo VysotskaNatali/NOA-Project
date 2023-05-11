@@ -1,1 +1,32 @@
-<p>auth-admin-dialog works!</p>
+<form 
+    [formGroup]="authForm">
+    <div class="form-group"> 
+    <h2>Вхід в кабінет</h2>
+    <button class="closeForm" mat-icon-button matTooltip="Basic"
+    mat-dialog-close>
+    <mat-icon>close</mat-icon>
+</button> </div>
+    <div class="form-group">
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label><span>Ваш email</span></mat-label>
+            <input formControlName="email"
+                matInput type="email">
+        </mat-form-field>
+    </div>
+
+
+    <div class="form-group">
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label><span>Ваш password</span></mat-label>
+            <input formControlName="password"
+                matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)=" hide=!hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button (click)="loginAdmin()"
+        [disabled]="authForm.invalid"
+        type="submit" color="primary">УВІЙТИ В КАБІНЕТ</button>
+</form>

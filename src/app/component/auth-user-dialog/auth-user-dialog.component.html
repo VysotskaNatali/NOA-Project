@@ -26,7 +26,7 @@
         </mat-form-field>
     </div>
 
-    <button mat-raised-button (click)="loginUser()"
+    <button mat-raised-button (click)="loginUser()" mat-dialog-close
         [disabled]="authForm.invalid"
         type="submit" color="primary">УВІЙТИ В КАБІНЕТ</button>
     <button mat-flat-button  (click)="isLogin=!isLogin">Зареєструватись</button>
@@ -44,14 +44,14 @@
     <div class="form-group-half">
         <mat-form-field appearance="outline" color="primary">
             <mat-label><span>Ваше І'мя</span></mat-label>
-            <input formControlName="firstN"
+            <input formControlName="firstName"
                 matInput type="text">
         </mat-form-field>
     </div>
     <div class="form-group-half">
         <mat-form-field appearance="outline" color="primary">
             <mat-label><span>Ваша фамілія</span></mat-label>
-            <input formControlName="lastN"
+            <input formControlName="lastName"
                 matInput type="text">
         </mat-form-field>
     </div>

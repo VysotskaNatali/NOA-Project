@@ -210,7 +210,7 @@
             </div>
 
             <div class="revers__form__group">
-                <button mat-raised-button    [disabled]="contactForm.invalid"
+                <button mat-raised-button  (click)="sendMessage()"  [disabled]="contactForm.invalid"
                 type="submit" color="primary">НАДІСЛАТИ</button>
             </div>
 
