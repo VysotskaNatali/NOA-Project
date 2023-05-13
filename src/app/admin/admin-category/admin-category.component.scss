@@ -1,0 +1,94 @@
+@import "../../shared/styles/media";
+@import "../../shared/styles/variables";
+@import "../../shared/styles/mixins";
+
+form {
+  width: 82%;
+  max-width: 550px;
+  min-height: 200px;
+  margin: 10px 50px;
+  @include respond(Medium) {
+    margin: 10px 0;
+  }
+  @include respond(Small) {
+    width: 94%;
+  }
+
+  .image {
+    display: flex;
+    width: 116px;
+    flex-wrap: wrap;
+    margin: 15px auto;
+  }
+  img {
+    height: 100px;
+    margin: 5px auto;
+  }
+}
+
+.table {
+  margin-top: 50px;
+  width: 100%;
+  border-bottom: 2px solid $lighterGrey;
+  @include respond(Medium) {
+    margin-top: 4px;
+  }
+
+  img {
+    height: 50px;
+    transition: 1s;
+    &:hover{
+        transform: scale(1.05);  
+    }
+    @include respond(Medium) {
+      height: 40px;
+    }
+  }
+  &__btn {
+    width: 60%;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: $main;
+    transition: 1s;
+    &:hover{
+        transform: scale(1.05);  
+    }
+    @include respond(Medium) {
+      font-size: 12px;
+    }
+  }
+}
+th,
+td {
+  border-bottom: 2px solid $lighterGrey;
+  padding: 20px;
+  text-align: start;
+  @include respond(Medium) {
+    padding: 5px;
+  }
+}
+td {
+  width: 25%;
+}
+.red {
+  color: $red;
+}
+input[type="file"] {
+  margin-bottom: 20px;
+  border: $lighterGrey;
+}
+input[type="file"]::file-selector-button {
+  padding: 7px;
+  border-radius:5px 0 0 5px ;
+  background-color: $main;
+  border: 2px solid $darkTeal;
+  transition: 1s;
+  color: $white;
+}
+
+input[type="file"]::file-selector-button:hover {
+  cursor: pointer;
+  background-color: $white;
+  border: 2px solid $darkTeal;
+  color: $darkTeal;
+}

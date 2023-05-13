@@ -35,10 +35,14 @@
     }
   }
   &__main {
-    width: calc(100% - 220px);
+    width: calc(100% - 200px);
+
+    @include respond(Medium) {
+      width: calc(100% - 170px);
+    }
 
     @include respond(Small) {
-      margin-top: 100px;
+      margin-top: 10px;
       width: 100%;
     }
   }

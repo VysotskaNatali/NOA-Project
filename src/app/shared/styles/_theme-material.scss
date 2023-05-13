@@ -30,11 +30,13 @@ $noa-project-theme: mat.define-light-theme(
 //-- Button style --
 .mat-mdc-raised-button {
   width: 100%;
+  transition: 1s;
 }
 .mat-mdc-raised-button:hover {
   color: $main !important;
   background-color: $white !important;
   border: 2px solid $main;
+  transition: 1s;
 }
 
 .mat-mdc-mini-fab {
@@ -63,6 +65,7 @@ $noa-project-theme: mat.define-light-theme(
   }
 }
 .mat-mdc-button {
+  transition: 1s;
   margin-top: 10px;
   color: white !important;
   &:hover {

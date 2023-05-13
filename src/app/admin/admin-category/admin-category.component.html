@@ -1,1 +1,56 @@
-<p>admin-category works!</p>
+<form [formGroup]="categoryForm" (ngSubmit)="saveCategory()" >
+    <mat-form-field appearance="outline">
+        <mat-label>Назва</mat-label>
+        <input matInput formControlName="name" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+          <mat-label>Шлях</mat-label>
+          <input matInput formControlName="path" type="text">
+        </mat-form-field>
+       
+        <ng-container *ngIf="!isUploaded">
+            <input class="form__file" type="file" placeholder=""
+                (change)="upload($event)">
+        </ng-container>
+    
+        <ng-container *ngIf="isUploaded">
+            <div class="image">
+                <img  [src]="valueByControl('imagePath')"  alt="image">
+            <button mat-flat-button color="warn" type="button" (click)="deleteImage()">ВИДАЛИТИ</button>
+            </div>
+        </ng-container>
+
+        <button mat-raised-button color="primary"
+         type="submit" [disabled]="categoryForm.invalid"> {{ editStatus ? 'ЗБЕРЕГТИ' : 'ДОДАТИ' }} </button>
+        
+</form>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"><p>Назва</p></th>
+            <th scope="col"><p>Шлях</p></th>
+            <th scope="col"><p>Картинка</p></th>
+            <th scope="col"><p>Дії</p></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of adminCategories">
+            <td><p>{{category.name}}</p></td>
+            <td><p>{{category.path}}</p></td>
+            <td><img [src]="category.imagePath"
+                    [alt]="category.name"></td>
+            <td>
+                <button class="table__btn" color="warn"(click)="editCategory(category)"
+                    >Редагувати</button>
+                <button (click)="deleteCategory(category)"
+                    class="table__btn red">Видалити</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
