@@ -11,6 +11,7 @@
       width: 110px;
     }
     @include respond(Small) {
+      width: 100%;
       @include dispay(flex, space-between, nowrap);
     }
 
@@ -28,6 +29,7 @@
 
       @include respond(Small) {
         display: flex;
+        flex-wrap: wrap;
       }
     }
   }

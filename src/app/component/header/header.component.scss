@@ -4,6 +4,7 @@
 
 .header {
   width: 100%;
+  min-width: 320px;
   height: 80px;
   padding: 15px 10px 0 20px;
   position: fixed;
@@ -34,6 +35,9 @@
     @include respond(Small) {
       width: 70px;
     }
+    @include respond(Xsmall) {
+      width: 60px;
+    }
   }
 
   &__menu {
@@ -42,6 +46,26 @@
 
     @include respond(Large) {
       width: 65px;
+    }
+    &__nav {
+      position: static;
+      background-color: transparent;
+      border: none;
+      color: $white;
+      padding-bottom: 5px;
+      &:hover span{
+        color:$main
+      }
+      
+      &:hover .header__dropdown {
+        display: block;
+        @include dispay(flex,  flex-start, wrap);
+      }
+    
+    }
+    &__thai {
+      @extend .header__menu__nav;
+    
     }
   }
 
@@ -80,5 +104,26 @@
 
   span {
     color: $white;
+  }
+  &__dropdown {
+    @extend %dropdown;
+    display: none;
+    &__category{
+      @extend %category;
+      
+    }
+    img{
+      @extend %image;
+    }
+    p{
+      font-size: 12px;
+      font-weight: 900;
+      @include respond(Large) {
+        font-size: 10px;
+      }
+      @include respond(Medium) {
+        font-size: 8px;
+      }
+    }
   }
 }

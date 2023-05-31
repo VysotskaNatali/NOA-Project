@@ -1,22 +1,23 @@
 @import "media";
 @import "font";
 @import "typography";
-
+@import "mixins";
 
 $white: #ffffff;
-$black: #2D2C2C;
+$black: #2d2c2c;
 $darkGrey: #3b3a3a;
 $lightGrey: #6d6d6d;
 $lighterGrey: #dfdbdb;
+$body: rgb(240, 241, 241);
 
-$red:#EF2F3D;
+$red: #ef2f3d;
 $green: #599921;
-$yellow:#ffcc00;
+$yellow: #ffcc00;
 
 $main: #009688;
 $darkTeal: #077a6f;
 $scroollBg: #d0f5f1;
-$greyBg:#f5f4f4;
+$greyBg: #f5f4f4;
 $facebook: #1f1675;
 $instagram: linear-gradient(
   180deg,
@@ -25,18 +26,18 @@ $instagram: linear-gradient(
   rgba(252, 176, 69, 1) 100%
 );
 
-%header{
+%header {
   color: $darkTeal;
   font-size: 38px;
-  font-family: 'Cera-Round-Pro-Bold';
+  font-family: "Cera-Round-Pro-Bold";
   @include respond(Medium) {
-   font-size: 32px;
- }
- @include respond(Small) {
-   font-size: 25px;
- }
+    font-size: 32px;
+  }
+  @include respond(Small) {
+    font-size: 25px;
+  }
 }
-%container{
+%container {
   width: 90%;
   margin: 40px auto;
   @include respond(Medium) {
@@ -47,5 +48,92 @@ $instagram: linear-gradient(
     width: 97%;
     margin: 20px auto;
   }
+}
 
+//--animation dropdown menu--
+%dropdown {
+  position: fixed;
+  top: 170px;
+  left:15%;
+  width: 60vw;
+  min-height: 200px;
+  background-color: $body;
+  border-radius: 2px;
+  opacity: 0.33;
+  padding: 20px;
+  animation: move 1s forwards 1 ease-in-out;
+
+  @include respond(Large) {
+    width: 70vw;
+    left: 15%;
+  }
+  @include respond(Medium) {
+    width: 80vw;
+    left: 10%;
+  }
+  @include respond(Small) {
+   width: 100vw;
+    left: 0px;
+  }
+    
+  
+}
+%category {
+  flex-direction: column;
+  @include dispay(flex, center, nowrap);
+  width: 110px;
+  min-height: 100px;
+  margin: 5px;
+  text-align: center;
+  @include respond(Large) {
+    width:90px;
+  }
+  @include respond(Medium) {
+    width: 70px;
+  }
+
+ 
+}
+%image {
+  width: 80px;
+  margin: 0px auto;
+  @include respond(Large) {
+    width: 60px;
+  }
+  @include respond(Medium) {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 2000px) {
+  @keyframes move {
+    from {
+      top: 170px;
+    }
+    to {
+      top: 80px;
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 720px) {
+  @keyframes move {
+    from {
+      top: 160px;
+    }
+    to {
+      top: 70px;
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 540px) {
+  @keyframes move {
+    from {
+      top: 150px;
+    }
+    to {
+      top: 60px;
+      opacity: 1;
+    }
+  }
 }

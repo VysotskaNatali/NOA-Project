@@ -64,6 +64,7 @@ $noa-project-theme: mat.define-light-theme(
     }
   }
 }
+
 .mat-mdc-button {
   transition: 1s;
   margin-top: 10px;
@@ -117,6 +118,7 @@ overflow: hidden!important;
 //--Angular material dialog style--
 .dialog-back, .warning-back, .call-back {
   background-color: rgba(0, 0, 0, 0.705);
+  position: relative;
   
 }
 .auth-dialog{
@@ -128,3 +130,6 @@ overflow: hidden!important;
 padding: 6px 25px;
 overflow: hidden;
 }
+
+
+

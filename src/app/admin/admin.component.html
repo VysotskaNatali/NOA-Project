@@ -9,18 +9,18 @@
           routerLinkActive="route-active">Товари</li>
         <li  [routerLink]="[ '/admin/order' ]"
           routerLinkActive="route-active">Замовлення</li>
-            <li  [routerLink]="[ '/admin/vacancies' ]"
-              routerLinkActive="route-active">Вакансії</li>
+          
       </ul>
     </div>
 
     <div class="admin__side__mobile">
       <mat-form-field appearance="outline">
-          <mat-select value="order" >
+        <mat-label>Choose ...</mat-label>
+          <mat-select >
             <mat-option value="category" [routerLink]="[ '/admin/category' ]">Категорії</mat-option>
-            <mat-option value="product" [routerLink]="[ '/admin/product' ]">Товари</mat-option>
-            <mat-option value="order" [routerLink]="[ '/admin/order' ]">Замовлення</mat-option>
-            <mat-option value="vacancies" [routerLink]="[ '/admin/vacancies' ]">Вакансії</mat-option>
+            <mat-option value="product"  [routerLink]="[ '/admin/product' ]">Товари</mat-option>
+            <mat-option value="order"   [routerLink]="[ '/admin/order' ]">Замовлення</mat-option>
+            
           </mat-select>
         </mat-form-field>
     </div>
